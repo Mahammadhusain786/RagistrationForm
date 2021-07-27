@@ -1,0 +1,16 @@
+body {
+    
+    background: url(https://d2d3qesrx8xj6s.cloudfront.net/img/screenshots/nofeat-f07fb47177349b859119a944386b085dc8987745.jpg);
+    background-size: cover;
+}
+
+*[role="form"] {
+    max-width: 53%;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    
+}
+
+
+
