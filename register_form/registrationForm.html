@@ -4,77 +4,75 @@
         <title>Registration Form</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!------ Include the above in your HEAD tag ---------->
+        <link rel="stylesheet" href="assets/register.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-        <!------ Include the above in your HEAD tag ---------->
+       
 
-        <link rel="stylesheet" href="stylesheet.css">
-        <script src="registrationForm.js"></script>
 
-        <script>
-            function validateForm() {
-            let x = document.forms["fname"].value;
-            if (x == "") {
-                alert("Name must be filled out");
-                return false;
-  }
+         
+
 }
-        </script>
     
     </head>
     <body>
-        <div class="container" class="panel-group" >
+        <div class="container" >
 
             <div class="jumbotron" style="width: 50%; margin-left: 25%; margin-top: 20px;">
                 <h2 style="text-align: center;">Registration Form</h2>
              </div>
             
-            <form role="form" id="form">
+            <form role="form" id="form" onsubmit="return validation()">
 
             <div class="form-group" >
-                <label for="fname">First Name :</label>
-                <input type="text" name="fname" id="fname" class="form-control" value="" class="well" required>
+                <label>First Name :</label>
+                <input type="text" name="" id="fname" class="form-control" >
+                <span id="fnameerror" class="text-danger font-weight-bold"></span>
             </div>
             <div class="form-group">
-                <label for="lname">Last Name :</label>
-                <input type="text" name="lname" id="lname" class="form-control" value="" required>
+                <label>Last Name :</label>
+                <input type="text" name="lname" id="lname" class="form-control" >
+                <span id="lnameerror" class="text-danger font-weight-bold"></span>
             </div>
-            <div class="form-group" id="abc">
+           <!-- <div class="form-group" id="abc">
                 <label>Department :</label>
-                <select name="department" id="department" style="width: 100%; display: block;" required>
+                <select class="form-select form-select-lg lg-3" aria-label=".form-select-lg example" name="department" id="department" style="width: 100%; display: block;">
+                <option value="Select">Select Any One</option>
                 <option value="IT">IT</option>
                 <option value="CE">CE</option>
                 <option value="EC">EC</option>
                 <option value="EE">EE</option>
                 </select>
-            </div>
+            </div>-->
+            
+                <div class="form-group ">
+                    <label>Country</label>
+                    <select id="inputState" class="form-control">
+                      <option selected> Choose Any One</option>
+                        <option>Uzbekistan</option>
+                        <option>Russia</option>
+                        <option>United States</option>
+                        <option>India</option>
+                        <option>Afganistan</option>
+                    </select>
+                    <span id="inputStateerror" class="text-danger font-weight-bold"></span>
+                  </div>
+           
 
-           <!-- <div class="dropdown form-group">
-                <label>Department :</label>
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
-                  Choose Anyone
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">IT</a>
-                  <a class="dropdown-item" href="#">CE</a>
-                  <a class="dropdown-item" href="#">Ec</a>
-                </div>
-            </div> -->
+            <br>
 
             <div class="form-group">
-                <label for="mobile">Mobile Number :</label>
-                <input type="number" name="mobile" id="mobile" class="form-control" value="" required>
+                <label >Mobile Number :</label>
+                <input type="text" name="" id="mobile" class="form-control">
+                <span id="mobileerror" class="text-danger font-weight-bold"></span>
             </div>
+
             <div class="form-group">
                 <label for="gender" >Gender : </label>
-                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Male" >Male
                 <input type="radio" name="gender" value="Female">Female
+                <span id="gendererror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="form-group">
@@ -83,8 +81,9 @@
             </div>
 
             <div class="form-group">
-                <label for="email">Email : </label>
-                <input type="email" name="email" class="form-control" value="" required>
+                <label>Email : </label>
+                <input type="email" id="email" name="" class="form-control" >
+                <span id="emailerror" class="text-danger font-weight-bold"></span>
             </div>
             
             <div class="form-group">
@@ -104,61 +103,119 @@
             </div>
             
             <div class="form-group">
-                <label for="password">Password* :</label>
-                <input type="password" id="password" class="form-control" required>
+                <label>Password* :</label>
+                <input type="password" name="" id="password" class="form-control">
+                <span id="passworderror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="form-group">
-                <label for="password">Confirm Password* :</label>
-                <input type="password" id="password"  class="form-control" required>
+                <label>Confirm Password* :</label>
+                <input type="password" name="" id="confirmpassword"  class="form-control">
+                <span id="confirmpassworderror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="form-group">
-                <label for="Height">Height* :</label>
+                <label>Height* :</label>
                 <input type="number" id="height" placeholder="Please write your height in centimetres" class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="Weight">Weight* :</label>
+                <label>Weight* :</label>
                 <input type="number" id="height" placeholder="Please write your weight in centimetres" class="form-control">
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary btn-block" name="submit" type="submit" onsubmit="return validateForm()">Submit</button>
+                <button class="btn btn-primary btn-block" name="" type="submit" >Submit</button>
             </div>
             </form>
         </div>
+
+
+        <script type="text/javascript">
+        
+            function validation(){
+    
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var mobile = document.getElementById("mobile").value;
+            var password = document.getElementById("password").value;
+            var confirmpassword = document.getElementById("confirmpassword").value;
+            var email = document.getElementById("email").value;
+
+            var getSelectedValue = document.querySelector( 'input[name="gender"]:checked');
+            //var lname = document.querySelector('input[name="lname"]').value;
+            
+           // var inputStatecheck = document.getElementById("inputState").value;
+
+            var fnmaecheck = /^[a-zA-Z\-]+$/;
+            var lnamecheck = /^[a-zA-Z\-]+$/;
+            var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+            var emailcheck = /^[A-Za-z_]{3,}@[A-A-Za-z]{3,}.{1}[A-A-Za-z.]{2,6}$/;
+            var mobilecheck = /^[789]{1}[0-9]{9}$/;
+    
+            if(fnmaecheck.test(fname)){
+                document.getElementById("fnameerror").innerHTML = "" ;
+            }else{
+                document.getElementById("fnameerror").innerHTML = "First Name is Invalid" ;
+                return false;
+            }
+    
+            if(lnamecheck.test(lname)){
+                document.getElementById("lnameerror").innerHTML = "" ;
+            }else{
+                document.getElementById("lnameerror").innerHTML = "Last Name is Invalid" ;
+                return false;
+            }
+
+            if(document.getElementById("inputState").selectedIndex == 0){
+                
+                document.getElementById("inputStateerror").innerHTML = "Select Anyones";
+                return false
+            }else{
+                document.getElementById("inputStateerror").innerHTML = "";
+            }
+
+            if(mobilecheck.test(mobile)){
+                document.getElementById("mobileerror").innerHTML = "" ;
+            }else{
+                document.getElementById("mobileerror").innerHTML = "Mobile No is Invalid" ;
+                return false;
+            }
+ 
+            if(getSelectedValue != null) {   
+                document.getElementById("gendererror").innerHTML = "";  
+            }else {  
+                document.getElementById("gendererror").innerHTML = "Please Select Gender"; 
+            }
+
+            
+            if(emailcheck.test(email)){
+                document.getElementById("emailerror").innerHTML = "" ;
+            }else{
+                document.getElementById("emailerror").innerHTML = "Email is Invalid" ;
+                return false;
+            }
+
+            if(passwordcheck.test(password)){
+                document.getElementById("passworderror").innerHTML = "" ;
+            }else{
+                document.getElementById("passworderror").innerHTML = "Password is Invalid" ;
+                return false;
+            }
+
+            if(confirmpassword.match(password)){
+                document.getElementById("confirmpassworderror").innerHTML = "" ;
+            }else{
+                document.getElementById("confirmpassworderror").innerHTML = "Confirm Password is Invalid" ;
+                return false;
+            }
+
+            }
+        </script>
+
     </body>
 
-    <script>
-        const form= document.getElementById("form");
-        const fname= document.getElementById("fname");
-        const lname= document.getElementById("lname");
-        const department= document.getElementById("department");
-        const mobile= document.getElementById("mobile");
-
-        form.addEventListener(submit,(event)=>{
-            event.preventDefault();
-            validate();
-        });
-
-        const validate = () =>{
-            const fname= fname.value.trim();
-            const lname= lname.value.trim();
-            const department= department.value.trim();
-            const mobile= mobile.value.trim();
-
-            if(fname===""){
-                setErrormsg("first name can not be blank");
-            }else if(fname.length<=2){
-                setErrormsg("first name can not be less than 3");
-            }
-            else{
-                setSuccessMsg();
-            }
-
-        }
-
-    </script>
-
 </html>
+<script src="assets/bootstrap/js/bootstrap.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

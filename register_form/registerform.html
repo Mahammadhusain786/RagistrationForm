@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head><title>register form</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <h1 class="text-center bg-dark text-white">Registration Form</h1>
+        <div class="container">
+
+            <br>
+
+            <form action="">
+
+                <div class="form-group" >
+                    <label>First Name :</label>
+                    <input type="text" name="" id="fname" class="form-control" >
+                    <span id="fnameerror" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name :</label>
+                    <input type="text" name="" id="lname" class="form-control" >
+                    <span id="lnameerror" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <label >Mobile Number :</label>
+                    <input type="text" name="" id="mobile" class="form-control">
+                    <span id="mobileerror" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Email : </label>
+                    <input type="email" id="email" name="" class="form-control" >
+                    <span id="emailerror" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Password :</label>
+                    <input type="password" name="" id="password" class="form-control">
+                    <span id="passworderror" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password :</label>
+                    <input type="password" name="" id="confirmpassword"  class="form-control">
+                    <span id="confirmpassworderror" class="text-danger font-weight-bold"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Department :</label>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </div>
+
+                <input type="submit" name="" class="btn btn-primary" onclick="return validation()"></input>
+
+            </form>
+
+        </div>
+
+        <script>
+
+    
+        
+            function validation(){
+            let firstname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let mobile = document.getElementById("mobile").value;
+            let password = document.getElementById("password").value;
+            let confirmpassword = document.getElementById("confirmpassword").value;
+            let email = document.getElementById("email").value;
+    
+           /* let fnmaecheck = /^[a-zA-Z\-]+$/;
+            let lnamecheck = /^[a-zA-Z\-]+$/;
+            let passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+            let emailcheck = /^[A-Za-z_]{3,}@[A-A-Za-z]{3,}.{1}[A-A-Za-z.]{2,6}$/;
+            let mobilecheck = /^[789]{1}[0-9]{9}$/;
+    
+           if(fnmaecheck.test(fname)){
+                document.getElementById("fnameerror").innerHTML = "" ;
+            }else{
+                document.getElementById("fnameerror").innerHTML = "First Name is Invalid" ;
+                return false;
+            }
+    
+            if(lnmaecheck.test(lname)){
+                document.getElementById("lnameerror").innerHTML = "" ;
+            }else{
+                document.getElementById("lnameerror").innerHTML = "Last Name is Invalid" ;
+                return false;
+            }
+
+            if(passwordcheck.test(password)){
+                document.getElementById("passworderror").innerHTML = "" ;
+            }else{
+                document.getElementById("passworderror").innerHTML = "Password is Invalid" ;
+                return false;
+            }
+
+            if(confirmpassword.match(confirmpassword)){
+                document.getElementById("confirmpassworderror").innerHTML = "" ;
+            }else{
+                document.getElementById("confirmpassworderror").innerHTML = "Confirm Password is Invalid" ;
+                return false;
+            }
+
+            if(mobilecheck.test(mobile)){
+                document.getElementById("mobileerror").innerHTML = "" ;
+            }else{
+                document.getElementById("mobileerror").innerHTML = "Mobile No is Invalid" ;
+                return false;
+            }
+
+            if(emailcheck.test(email)){
+                document.getElementById("emailerror").innerHTML = "" ;
+            }else{
+                document.getElementById("emailerror").innerHTML = "Password is Invalid" ;
+                return false;
+            }*/
+
+            if(firstname == ""){
+                document.getElementById("fname").innerHTML = "Please Fill"
+                return false;
+            }
+    
+            }
+        </script>
+
+    </body>
+</html>

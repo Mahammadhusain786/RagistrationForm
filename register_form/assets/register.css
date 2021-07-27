@@ -6,14 +6,10 @@ body {
 }
 
 *[role="form"] {
-    max-width: 530px;
+
+    max-width: 555px;
     padding: 15px;
     margin: 0 auto;
     border-radius: 0.3em;
     background-color: #f2f2f2;
 }
-
-
-
-
-
