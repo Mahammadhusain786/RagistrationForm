@@ -8,11 +8,6 @@
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         
-       
-
-
-         
-
 }
     
     </head>
@@ -23,16 +18,16 @@
                 <h2 style="text-align: center;">Registration Form</h2>
              </div>
             
-            <form role="form" id="form" onsubmit="return validation()">
+            <form class="form" role="form" id="form" name="form" onsubmit="return validation()" >
 
             <div class="form-group" >
                 <label>First Name :</label>
-                <input type="text" name="" id="fname" class="form-control" >
+                <input type="text" name="fname" id="fname" placeholder="please enter First Name" class="form-control" >
                 <span id="fnameerror" class="text-danger font-weight-bold"></span>
             </div>
             <div class="form-group">
                 <label>Last Name :</label>
-                <input type="text" name="lname" id="lname" class="form-control" >
+                <input type="text" name="lname" id="lname" placeholder="please enter Last Name" class="form-control" >
                 <span id="lnameerror" class="text-danger font-weight-bold"></span>
             </div>
            <!-- <div class="form-group" id="abc">
@@ -49,7 +44,7 @@
                 <div class="form-group ">
                     <label>Country</label>
                     <select id="inputState" class="form-control">
-                      <option selected> Choose Any One</option>
+                      <option value="Choose Any One" selected> Choose Any One</option>
                         <option>Uzbekistan</option>
                         <option>Russia</option>
                         <option>United States</option>
@@ -64,20 +59,21 @@
 
             <div class="form-group">
                 <label >Mobile Number :</label>
-                <input type="text" name="" id="mobile" class="form-control">
+                <input type="number" name="" id="mobile" placeholder="Enter Mobile Number In Digit" class="form-control">
                 <span id="mobileerror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="form-group">
                 <label for="gender" >Gender : </label>
-                <input type="radio" name="gender" value="Male" >Male
-                <input type="radio" name="gender" value="Female">Female
+                <input type="radio" name="gender" value="Male" style="margin: 10px;" >Male
+                <input type="radio" name="gender" value="Female" style="margin: 10px;">Female
                 <span id="gendererror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="form-group">
                 <label for="birthDate">Date of Birth* :</label>
                 <input type="date" id="birthDate" class="form-control">
+                <span id="doberror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="form-group">
@@ -89,22 +85,23 @@
             <div class="form-group">
                 <label for="hobby">Hobby :</label>
                 <label class="checkbox-inline">
-                    <input type="checkbox" value="" style="margin: 10px;">Sport
+                    <input type="checkbox" value="" name="hobby" style="margin: 10px;">Sport
                   </label>
                   <label class="checkbox-inline">
-                    <input type="checkbox" value="" style="margin: 10px;">Reading
+                    <input type="checkbox" value="" name="hobby" style="margin: 10px;">Reading
                   </label>
                   <label class="checkbox-inline">
-                    <input type="checkbox" value="" style="margin: 10px;">Writting
+                    <input type="checkbox" value="" name="hobby" style="margin: 10px;">Writting
                   </label>
                   <label class="checkbox-inline">
-                    <input type="checkbox" value="" style="margin: 10px;">Game
+                    <input type="checkbox" value="" name="hobby" style="margin: 10px;">Game
                   </label>
+                  <label id="hobbyerror" class="text-danger font-weight-bold"></label>
             </div>
             
             <div class="form-group">
                 <label>Password* :</label>
-                <input type="password" name="" id="password" class="form-control">
+                <input type="password" name="" id="password" placeholder="Password must be in Digit" class="form-control">
                 <span id="passworderror" class="text-danger font-weight-bold"></span>
             </div>
 
@@ -116,106 +113,35 @@
 
             <div class="form-group">
                 <label>Height* :</label>
-                <input type="number" id="height" placeholder="Please write your height in centimetres" class="form-control">
+                <input type="number" name="" id="height" placeholder="Please write your height in centimetres" class="form-control">
+                <span id="heighterror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="form-group">
                 <label>Weight* :</label>
-                <input type="number" id="height" placeholder="Please write your weight in centimetres" class="form-control">
+                <input type="text" id="weight" name="" placeholder="Please write your weight in centimetres" class="form-control" >
+                <span id="weighterror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary btn-block" name="" type="submit" >Submit</button>
+                <label>Adrres:</label>
+                <textarea type="text" cols="30" rows="4"  name="address" id="address" placeholder="Please enter Adrress" class="form-control"></textarea>
+                <span id="adrreserror" class="text-danger font-weight-bold"></span>
             </div>
+
+            <div class="form-group ">
+                <button class="btn btn-primary " id="submit" name="" type="submit" >Submit</button>
+                <button class="btn btn-primary " id="submit" name="" type="reset" >Reset</button>
+            </div>
+
             </form>
         </div>
-
-
-        <script type="text/javascript">
-        
-            function validation(){
-    
-            var fname = document.getElementById("fname").value;
-            var lname = document.getElementById("lname").value;
-            var mobile = document.getElementById("mobile").value;
-            var password = document.getElementById("password").value;
-            var confirmpassword = document.getElementById("confirmpassword").value;
-            var email = document.getElementById("email").value;
-
-            var getSelectedValue = document.querySelector( 'input[name="gender"]:checked');
-            //var lname = document.querySelector('input[name="lname"]').value;
-            
-           // var inputStatecheck = document.getElementById("inputState").value;
-
-            var fnmaecheck = /^[a-zA-Z\-]+$/;
-            var lnamecheck = /^[a-zA-Z\-]+$/;
-            var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
-            var emailcheck = /^[A-Za-z_]{3,}@[A-A-Za-z]{3,}.{1}[A-A-Za-z.]{2,6}$/;
-            var mobilecheck = /^[789]{1}[0-9]{9}$/;
-    
-            if(fnmaecheck.test(fname)){
-                document.getElementById("fnameerror").innerHTML = "" ;
-            }else{
-                document.getElementById("fnameerror").innerHTML = "First Name is Invalid" ;
-                return false;
-            }
-    
-            if(lnamecheck.test(lname)){
-                document.getElementById("lnameerror").innerHTML = "" ;
-            }else{
-                document.getElementById("lnameerror").innerHTML = "Last Name is Invalid" ;
-                return false;
-            }
-
-            if(document.getElementById("inputState").selectedIndex == 0){
-                
-                document.getElementById("inputStateerror").innerHTML = "Select Anyones";
-                return false
-            }else{
-                document.getElementById("inputStateerror").innerHTML = "";
-            }
-
-            if(mobilecheck.test(mobile)){
-                document.getElementById("mobileerror").innerHTML = "" ;
-            }else{
-                document.getElementById("mobileerror").innerHTML = "Mobile No is Invalid" ;
-                return false;
-            }
- 
-            if(getSelectedValue != null) {   
-                document.getElementById("gendererror").innerHTML = "";  
-            }else {  
-                document.getElementById("gendererror").innerHTML = "Please Select Gender"; 
-            }
-
-
-            if(emailcheck.test(email)){
-                document.getElementById("emailerror").innerHTML = "" ;
-            }else{
-                document.getElementById("emailerror").innerHTML = "Email is Invalid" ;
-                return false;
-            }
-
-            if(passwordcheck.test(password)){
-                document.getElementById("passworderror").innerHTML = "" ;
-            }else{
-                document.getElementById("passworderror").innerHTML = "Password is Invalid" ;
-                return false;
-            }
-
-            if(confirmpassword.match(password)){
-                document.getElementById("confirmpassworderror").innerHTML = "" ;
-            }else{
-                document.getElementById("confirmpassworderror").innerHTML = "Confirm Password is Invalid" ;
-                return false;
-            }
-
-            }
-        </script>
 
     </body>
 
 </html>
 <script src="assets/bootstrap/js/bootstrap.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap-validate.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="registrationForm.js"></script>
