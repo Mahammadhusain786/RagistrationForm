@@ -58,10 +58,10 @@ form.addEventListener('submit',(event)=>{
 
  if(fnmaecheck.test(fname)){
 	 document.getElementById("fnameerror").innerHTML = "" ;
-	 //document.getElementById("fnameerror").focus();	 
+	 document.getElementById("fname").focus();	 
  }else{
 	 document.getElementById("fnameerror").innerHTML = "First Name is Invalid" ; 
-	 //document.getElementById("fname").style.color = "red";
+	 document.getElementById("fname").select();
  }
 
 /*  if(lname === "") {
